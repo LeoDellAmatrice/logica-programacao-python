@@ -1,5 +1,7 @@
 from app.ui.frames import desafio_frame, editor_frame, output_frame, header_frame
 from app.services.desafio_service import DesafioService
+from app.assets.loader_assets import resource_path
+from tkinter import PhotoImage
 import customtkinter as ctk
 
 class MainWindow(ctk.CTk):
@@ -7,7 +9,9 @@ class MainWindow(ctk.CTk):
         super().__init__()
 
         self.title("CheetahPy")
-        self.iconbitmap("assets/icons/cheetahpy.ico")
+
+        self.iconbitmap(resource_path("assets\\icons\\cheetahpy.ico"))
+
 
         self.minsize(800, 500)
         self.after(0, lambda: self.state("zoomed"))  # type: ignore[arg-type]
