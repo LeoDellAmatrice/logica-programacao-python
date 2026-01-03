@@ -1,6 +1,5 @@
-import customtkinter as ctk
-
 from app.services.desafio_service import DesafioService
+import customtkinter as ctk
 
 
 class EditorFrame(ctk.CTkFrame):
@@ -8,7 +7,7 @@ class EditorFrame(ctk.CTkFrame):
         super().__init__(master)
 
 
-        self.grid(row=0, column=1, rowspan=2, sticky="nsew", padx=(5, 16), pady=16)
+        self.grid(row=1, column=1, rowspan=2, sticky="nsew", padx=(5, 16), pady=(5, 16))
 
         self.desafio_service = desafio_service
         self.on_output = on_output

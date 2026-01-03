@@ -1,4 +1,4 @@
-from app.ui.frames import desafio_frame, editor_frame, output_frame
+from app.ui.frames import desafio_frame, editor_frame, output_frame, header_frame
 from app.services.desafio_service import DesafioService
 import customtkinter as ctk
 
@@ -6,7 +6,8 @@ class MainWindow(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.title("SnakePy")
+        self.title("CheetahPy")
+        self.iconbitmap("assets/icons/cheetahpy.ico")
 
         self.minsize(800, 500)
         self.after(0, lambda: self.state("zoomed"))  # type: ignore[arg-type]
@@ -18,10 +19,13 @@ class MainWindow(ctk.CTk):
 
         self.columnconfigure(0, weight=2)
         self.columnconfigure(1, weight=4)
-        self.rowconfigure(0, weight=1)
+        self.rowconfigure(0, weight=0)
         self.rowconfigure(1, weight=5)
+        self.rowconfigure(2, weight=5)
 
         self.desafios_service = DesafioService()
+
+        self.frame_header = header_frame.HeaderFrame(master=self)
 
         self.frame_desafio = desafio_frame.DesafioFrame(master=self, desafio_service=self.desafios_service)
         self.frame_output = output_frame.OutputFrame(master=self)

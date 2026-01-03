@@ -1,12 +1,12 @@
-import customtkinter as ctk
 from customtkinter import CTkTextbox
+import customtkinter as ctk
 
 
 class OutputFrame(ctk.CTkFrame):
     def __init__(self, master):
         super().__init__(master)
 
-        self.grid(row=1, column=0, sticky="nsew", padx=(16, 5), pady=(5, 16))
+        self.grid(row=2, column=0, sticky="nsew", padx=(16, 5), pady=(5, 16))
 
         self.output: CTkTextbox = self.build_frame()
 

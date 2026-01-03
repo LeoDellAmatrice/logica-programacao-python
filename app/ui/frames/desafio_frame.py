@@ -1,9 +1,7 @@
-from typing import Literal
-
-import customtkinter as ctk
-
-from app.domain.desafio import Desafio
 from app.services.desafio_service import DesafioService
+from app.domain.desafio import Desafio
+import customtkinter as ctk
+from typing import Literal
 
 
 class DesafioFrame(ctk.CTkFrame):
@@ -17,7 +15,7 @@ class DesafioFrame(ctk.CTkFrame):
         self.titulo: ctk.CTkLabel | None = None
         self.instrucoes: ctk.CTkTextbox | None = None
 
-        self.grid(row=0, column=0, sticky="nsew", padx=(16, 5), pady=(16, 5))
+        self.grid(row=1, column=0, sticky="nsew", padx=(16, 5), pady=5)
         self.columnconfigure(0, weight=1)
         self.rowconfigure(3, weight=1)
 
