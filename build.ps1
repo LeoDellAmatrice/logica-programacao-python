@@ -1,10 +1,12 @@
-Write-Host "Buildando CheetahPy..." -ForegroundColor Green
+Write-Host "Instalando dependencias python..." -ForegroundColor Green
 
 python -m venv .venv
 .venv\Scripts\activate
 
 pip install -r requirements.txt
 pip install pyinstaller
+
+Write-Host "Buildando CheetahPy..." -ForegroundColor Green
 
 pyinstaller app/main.py `
   --onefile `
