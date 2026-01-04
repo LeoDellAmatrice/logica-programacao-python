@@ -21,3 +21,12 @@ def load_logo(size=(80, 80)) -> ctk.CTkImage:
         dark_image=Image.open(path),
         size=size
     )
+
+def load_icon(name: str, size: tuple[int, int] = (70, 70)) -> ctk.CTkImage:
+    path = resource_path(f"assets/icons/{name}.ico")
+
+    return ctk.CTkImage(
+        light_image=Image.open(path),
+        dark_image=Image.open(path),
+        size=size
+    )
